@@ -1,0 +1,74 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+class Solution {
+public:
+    int longestMountain(vector<int>& arr) {
+        
+        int n=arr.size();
+        int a=0;
+        int c=1;
+        
+        for(int i=1;i<n-1;i++)
+            
+            
+        {
+            
+            
+              c=1;
+             if(arr[i-1]<arr[i]&&arr[i+1]<arr[i])
+             {
+                 
+                 int j=i;
+                 while(j>0 &&arr[j-1]<arr[j])
+                 {
+                     c++;
+                     j--;
+                 }
+                 
+                 int k=i;
+                  while(j>n-1&&arr[k+1]<arr[k])
+                 {
+                     c++;
+                     k++;
+                 }
+                 
+                 
+                 
+                 
+                 
+             }
+            
+            if(c>a)
+            {
+                a=c;
+            
+            }
+            
+            
+             
+            
+        }
+        
+        return a;
+        
+    }
+};
+
+int main()
+{
+   // cout<<"Hello World";
+    vector<int>arr{2,1,4,7,3,2,5};
+    int s=longestMountain(arr);
+    cout<<s;
+
+    return 0;
+}
